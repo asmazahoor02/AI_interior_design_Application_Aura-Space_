@@ -1,4 +1,4 @@
-# 🏠 AURA-Space: AI-Based Interior Design Ecosystem
+# 🏠 AURA-Space: AI-Based Interior Design Application
 Generative AI | Computer Vision | Flutter | FastAPI
 
 ## 🌟 Executive Summary
@@ -6,15 +6,41 @@ AURA-Space is an end-to-end AI platform that solves the "re-generation" challeng
 
 ## 📖 Table of Contents
 
-1. [Data Pipeline & preprocessing](#data-pipeline-&-preprocessing)
-2. [Core Modules](#core-modules)
-3. [Problem Solving](#problem-solving)
-4. [Technical Architecture](#technical-architecture)
-5. [Tech Stack](#tech-stack)
-6. [Setup & Installation](#setup--installation)
-7. [Challenges & Limitations](#challenges-&-limitations)
-8. [Academic Context](#academic-context)
+1. [Project Structure](#project-structure)
+2. [Data Pipeline & preprocessing](#data-pipeline-&-preprocessing)
+3. [Core Modules](#core-modules)
+4. [Problem Solving](#problem-solving)
+5. [Technical Architecture](#technical-architecture)
+6. [Tech Stack](#tech-stack)
+7. [Setup & Installation](#setup--installation)
+8. [Challenges & Limitations](#challenges-&-limitations)
+9. [Academic Context](#academic-context)
 
+## 📁 Project Structure
+      AI_interior_design_Application_Aura-Space_/
+      ├── Dataset/                             # some images from data which are used to train
+      |   ├── images/                          # Original images
+      │   ├── annotation/                      # annotated depth images
+      │   ├── rename files.py/                 # rename image script (rename files.py)
+      |   ├── depth map generator.py/          # py script to generat depth map image
+      │   ├── Blip captioning.py/              # use blip model to captions images
+      │   └── metadata.json                    # caption file of data
+      ├── Spaces/                              # AI core spaces for design generation
+      │   ├── controlnet depth generation/     #  fine tuned model to generate design from scratch (app.py)
+      │   ├── Empty room generation/           # py scripts for empty room styling (app.py, color.py)
+      │   ├── Room Inpainting/                 # space to inpaint object in image (inpainting.py, inpainting_app.py)
+      │   ├── controlnet object regeneration/  # space to generate specific objects wihin image (colors.py, control_net_room_generate_app.py, regenerate.py)
+      │   └── recolor_object_app.py/          # recolor space code file 
+      │    
+      ├── model/                              # trained modvl on Depth dataset
+      │   ├── controlnet depth model/         # config.json or safetensors files of finetuned model
+      │   └── fine_tunning_scrpt.py          # script to fine tune model
+      ├── ui_fyp/                            # Mobile App UI and Api connection
+      |   ├── lib/                           # dart source code
+      │   └── pubspec.yaml                   # Flutter dependencies
+      ├── Requirements.txt/                  # Required Dependencies
+      ├── LICENSE
+      └── README.md
 ## 📊 Data Pipeline & Preprocessing
 To achieve high-quality results, we implemented a custom data pipeline:
 1. **Depth Extraction:** Generating spatial maps for structural consistency.
