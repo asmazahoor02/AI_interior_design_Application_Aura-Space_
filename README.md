@@ -1,7 +1,7 @@
 # 🏠 AURA-Space: AI-Based Interior Design Application
 Generative AI | Computer Vision | Flutter | FastAPI
 
-## 🌟 Executive Summary
+## Executive Summary
 AURA-Space is an end-to-end AI platform that solves the "re-generation" challenge in interior design. Traditional AI often alters the entire room layout when asked for a small change; AURA-Space uses Semantic Segmentation and Multi-Conditioning ControlNets to provide surgical, pixel-perfect design edits while maintaining structural integrity.
 
 ## 📖 Table of Contents
@@ -48,22 +48,22 @@ To achieve high-quality results, we implemented a custom data pipeline:
 3. **Metadata Generation:** Creating metadata.json triplets (Image + Depth + Caption) for model fine-tuning.
 
 ## 🧩 Core Modules
-1. 🏙️ **Empty Room Generation** (empty_room_generation_app.py)
+1. **Empty Room Generation** (empty_room_generation_app.py)
 * Purpose: Furnishing an empty architectural shell.
 * How it works: Uses Realistic Vision V5.1 combined with ControlNet Depth and Segmentation to ensure furniture is placed in a 3D-aware manner while keeping walls and floors intact.
-2. 🛋️ **Semantic Object Regeneration** (regenerate.py)
+2.  **Semantic Object Regeneration** (regenerate.py)
 * Purpose: Replacing specific furniture items via AI.
 * How it works: Leverages Mask2Former to identify 100+ object categories (ADE20K). It generates a precise inpainting mask for the user-selected object, preserving the room's global context.
-3. 🎨 **Texture-Preserving Recoloring** (recolor_object_app.py)
+3.  **Texture-Preserving Recoloring** (recolor_object_app.py)
 * Purpose: Non-destructive color changes for furniture and walls.
 * How it works: Employs LAB Color Space transformation. By isolating the Lightness ($L$) channel, we preserve original textures and shadows while injecting new color ($A, B$ channels).
-4. 🖌️ **Manual Room Inpainting** (inpainting_app.py)
+4.  **Manual Room Inpainting** (inpainting_app.py)
 * Purpose: "Paint-to-Design" freehand editing.
 * How it works: Features an interactive canvas where users brush areas for redesign. We apply FFT-based Gaussian Blurring to the mask edges to ensure a seamless "melt" between original and AI content.
-🏙️ **5. Design from Scratch** ():  Generate a full interior design from an image of an empty room using detailed text prompts.
- **6. Cloud Integration:** Firebase for user authentication and data storage; Hugging Face Spaces for hosting the AI model environments.
+ 5. **Design from Scratch** ():  Generate a full interior design from an image of an empty room using detailed text prompts.
+ 6.  **Cloud Integration:** Firebase for user authentication and data storage; Hugging Face Spaces for hosting the AI model environments.
 
-## 🔬 Problem Solving
+## Problem Solving
 1. **Overcoming the Hallucination Problem**
    To ensure the AI respects room boundaries, we implemented Multi-Control Conditioning:
    * **Depth Anything Model:** Generates a 3D skeleton to prevent floating furniture.
@@ -71,7 +71,7 @@ To achieve high-quality results, we implemented a custom data pipeline:
 2. **Texture-Preserving Color Logic**
    * For the recoloring module, we avoided standard generation to prevent texture loss. By isolating the Lightness ($L$) channel in the LAB color space, the system changes the hue while maintaining the exact lighting and grain of the original material.
    
-##  🏗 Technical Architecture 
+## Technical Architecture 
 graph LR
 
     subgraph "Frontend Layer"
