@@ -57,6 +57,7 @@ Data piepline and preprocessing are cpmprised of image loading, resizing to main
 2. **Automated Captioning:** Use Blip caption model to genmerate description for the interior datasets.
 3. **Metadata Generation:** Create metadata.json file having triplet (image, depth map, and caption) save for the fine tunning of model.
 
+
 ## Object detection and Design Generation Pipeline
 
 Design generation pipline isbased on computer vision and design generation process using AI and Gen Ai Models.
@@ -66,6 +67,7 @@ Design generation pipline isbased on computer vision and design generation proce
 2. ***Design Generation:*** From semantic segmentation output images goes into desgin generation process.
    * **StableDiffusionInpaintPipeline:** segmented objects remove from another object or from the adjustment of the background.
    * **SatbaleDiffusionControlNetPipeline:** it is used to create a main model, which is the combination of all the encoders of Stable Diffusion and ControlNet, to use as input in image processing.
+
 
 ## 🧩 5 Main Core Modules of the Project
 
@@ -87,11 +89,13 @@ Design generation pipline isbased on computer vision and design generation proce
 * Testing Prompt: Recolor the sofa to a deep emerald green."
 <img width="1092" height="580" alt="image" src="https://github.com/user-attachments/assets/e391c746-2efd-4c5e-a8af-b851163cbe82" />
 
+
 4.  **Room Inpainting** (inpainting_app.py)
 * Purpose: "Paint-to-Design" freehand editing.
 * How it works: Features an interactive canvas where users brush areas for redesign. We apply FFT-based Gaussian Blurring to the mask edges to ensure a seamless "melt" between original and AI content.
 * Testing Prompt: Remove the old brown sofa and replace it with a sleek, gray modular sectional.
 <img width="1472" height="562" alt="image" src="https://github.com/user-attachments/assets/8b637fe8-7dd1-464c-bbd6-ebaf778b7853" />
+
 
  5. **ControlNet depth Generation:** (controlnet_depth_model_app.py) Generate a full interior design from an image of an empty room using detailed text prompts and 3 types of ControlNet Maps: segmentatio Map, canny edges, and depth Map. this Model is trained on our custom dataset.
     * Testing prompt: A high-quality photo of a modern, minimalist living room with a large window, light wooden flooring, a plush grey sofa, and a sleek glass coffee table.
@@ -106,11 +110,14 @@ Design generation pipline isbased on computer vision and design generation proce
  * Login and signup Screens
 <img width="1033" height="736" alt="image" src="https://github.com/user-attachments/assets/6056991b-e123-4359-b39b-05e139e7dfeb" />
 
+
  * Main Menu and Feature Selection
    <img width="402" height="764" alt="image" src="https://github.com/user-attachments/assets/bcb34eff-c001-406a-b301-9773f95c4c3b" />
+
    
  * Empty room genearation Flow
    <img width="805" height="857" alt="image" src="https://github.com/user-attachments/assets/6a64ef80-206d-4934-98fe-d3ef9d9a9481" />
+
    
  * Object regenartion flow
 <img width="719" height="817" alt="image" src="https://github.com/user-attachments/assets/ec559ed4-416e-4bef-9113-0813624de9cf" />
