@@ -1,1 +1,16 @@
+diffusers
+transformers
+huggingface_hub
+torchvision
+torch
+Pillow
+opencv-python
+accelerate
+scipy
+scikit-image
+numpy
+pandas
+gradio
+
+
 
