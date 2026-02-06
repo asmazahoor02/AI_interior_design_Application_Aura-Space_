@@ -110,8 +110,8 @@ Design generation pipline isbased on computer vision and design generation proce
  * Login and signup Screens
 <img width="1033" height="736" alt="image" src="https://github.com/user-attachments/assets/6056991b-e123-4359-b39b-05e139e7dfeb" />
 
-
  * Main Menu and Feature Selection
+
    <img width="402" height="764" alt="image" src="https://github.com/user-attachments/assets/bcb34eff-c001-406a-b301-9773f95c4c3b" />
 
    
