@@ -176,6 +176,8 @@ graph LR
 * Supervisor: Ms. Sanam Fayaz
 * Department: Computer Science & Software Engineering
 
+* **Note:** the stable diffusion used in the project from stabilityai is wirthdrawed from the site, to run the spaces it is necessary to use another model instead of stabilityai/stablediffusionbase-2- version.
+
 # 📫 Connect with the Developers
 * Asma Zahoor - [LinkedIn](https://www.linkedin.com/in/asmazahoor/)
 * Aliza Imtiaz - [LinkedIn](https://www.linkedin.com/in/alizaa-imtiaz-983b9a24a/)
